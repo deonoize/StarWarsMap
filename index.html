@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Звездные войны</title>
+        <style>
+            body {
+                user-select: none;
+            }
+
+            .map {
+                width: 1830px;
+                position: relative;
+                margin: 0 auto;
+            }
+
+            .map img {
+                width: 100%;
+            }
+
+            .button {
+                width: 133px;
+                height: 133px;
+                opacity: 0.3;
+                background: white;
+                border-radius: 50%;
+                position: absolute;
+                transition: .5s;
+            }
+            .button:hover {
+                opacity: 0.4;
+            }
+            .button.red {
+                background: red;
+            }
+            .button.yellow {
+                background: yellow;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="map">
+            <img src="image/map.png" alt="-" />
+            <div class="button" style="top: 14px;left: 150px;"></div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
