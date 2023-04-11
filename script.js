@@ -30,6 +30,11 @@ $(document).ready(function () {
         localStorage.setItem('buttons', JSON.stringify(buttons));
     });
 
+    $('.clear').click(function () {
+        localStorage.removeItem('buttons');
+        location.reload();
+    });
+
     function setButton(button, value) {
         switch (value) {
             case undefined:

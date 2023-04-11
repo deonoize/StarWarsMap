@@ -22,6 +22,39 @@
                 width: 100%;
             }
 
+            .clear {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 5%;
+                background: rgba(255, 255, 255, 30%);
+                border-bottom-right-radius: 40%;
+            }
+
+            .clear:after {
+                content: "";
+                display: block;
+                padding-bottom: 100%;
+            }
+
+            .clear .line {
+                position: absolute;
+                left: 47.5%;
+                top: 47.5%;
+                content: '';
+                height: 60%;
+                width: 10%;
+                background-color: #333;
+            }
+
+            .clear .line:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            .clear .line:nth-child(2) {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+
             .button {
                 width: 8%;
                 opacity: 0.3;
@@ -60,6 +93,12 @@
     <body>
         <div class="map">
             <img src="image/map.png" alt="-">
+
+            <div class="clear">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
             <div class="button" style="top: 8.25077%; left: 11.8499%;" data-key="1"></div>
             <div class="button" style="top: 9.33117%; left: 30.563%; width: 6.49196%;" data-key="2"></div>
             <div class="button" style="top: 9.8223%; left: 42.3592%; width: 8.4985%;" data-key="3"></div>
