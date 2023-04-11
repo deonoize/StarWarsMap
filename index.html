@@ -6,12 +6,16 @@
         <style>
             body {
                 user-select: none;
+                padding: 0;
+                margin: 0;
             }
 
             .map {
-                width: 1830px;
+                width: 100%;
                 position: relative;
                 margin: 0 auto;
+                display: flex;
+                flex-direction: column-reverse;
             }
 
             .map img {
@@ -19,31 +23,77 @@
             }
 
             .button {
-                width: 133px;
-                height: 133px;
+                width: 8%;
                 opacity: 0.3;
                 background: white;
                 border-radius: 50%;
                 position: absolute;
-                transition: .5s;
+                transform: translate(-50%, -50%);
             }
-            .button:hover {
-                opacity: 0.4;
+
+            .button:after {
+                content: "";
+                display: block;
+                padding-bottom: 100%;
             }
+
+            .button:before {
+                content: attr(data-key);
+                visibility: visible;
+                font-weight: bold;
+                left: 20px;
+                top: 20px;
+                position: absolute;
+            }
+
             .button.red {
                 background: red;
             }
+
             .button.yellow {
                 background: yellow;
             }
         </style>
-        <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     </head>
     <body>
         <div class="map">
-            <img src="image/map.png" alt="-" />
-            <div class="button" style="top: 14px;left: 150px;"></div>
+            <img src="image/map.png" alt="-">
+            <div class="button" style="top: 8.25077%; left: 11.8499%;" data-key="1"></div>
+            <div class="button" style="top: 9.33117%; left: 30.563%; width: 6.49196%;" data-key="2"></div>
+            <div class="button" style="top: 9.8223%; left: 42.3592%; width: 8.4985%;" data-key="3"></div>
+            <div class="button" style="top: 5.99161%; left: 69.6515%; width: 4.49833%;" data-key="4"></div>
+            <div class="button" style="top: 6.48273%; left: 89.3834%; width: 5.49866%;" data-key="5"></div>
+            <div class="button" style="top: 39.8786%; left: 7.98928%; width: 5.99882%;" data-key="6"></div>
+            <div class="button" style="top: 30.1545%; left: 17.1046%; width: 6.99802%;" data-key="7"></div>
+            <div class="button" style="top: 29.8598%; left: 27.8284%; width: 5.99882%;" data-key="8"></div>
+            <div class="button" style="top: 32.119%; left: 39.034%; width: 6.99914%;" data-key="9"></div>
+            <div class="button" style="top: 19.6446%; left: 54.4236%; width: 5.99802%;" data-key="10"></div>
+            <div class="button" style="top: 27.0114%; left: 63.5925%; width: 6.99914%;" data-key="11"></div>
+            <div class="button" style="top: 40.075%; left: 72.118%; width: 7.9978%;" data-key="12"></div>
+            <div class="button" style="top: 21.5109%; left: 81.6086%; width: 6.49898%;" data-key="13"></div>
+            <div class="button" style="top: 31.235%; left: 93.8338%; width: 8%;" data-key="14"></div>
+            <div class="button" style="top: 53.7281%; left: 42.1984%; width: 8.49936%;" data-key="15"></div>
+            <div class="button" style="top: 50.8796%; left: 55.496%; width: 6.99914%;" data-key="16"></div>
+            <div class="button" style="top: 54.0227%; left: 81.0188%; width: 4.49833%;" data-key="17"></div>
+            <div class="button" style="top: 55.6925%; left: 92.6542%; width: 6.49898%;" data-key="18"></div>
+            <div class="button" style="top: 65.5148%; left: 4.18231%; width: 5.49866%;" data-key="19"></div>
+            <div class="button" style="top: 59.9161%; left: 19.303%; width: 4.9985%;" data-key="20"></div>
+            <div class="button" style="top: 64.3362%; left: 32.6005%; width: 7.49898%;" data-key="21"></div>
+            <div class="button" style="top: 67.9704%; left: 58.3378%; width: 5.99882%;" data-key="22"></div>
+            <div class="button" style="top: 66.6935%; left: 72.5469%; width: 6.49898%;" data-key="23"></div>
+            <div class="button" style="top: 75.1407%; left: 86.1126%; width: 5.99882%;" data-key="24"></div>
+            <div class="button" style="top: 74.0602%; left: 96.4611%; width: 4.49833%;" data-key="25"></div>
+            <div class="button" style="top: 75.4354%; left: 13.1904%; width: 7.99914%;" data-key="26"></div>
+            <div class="button" style="top: 90.5617%; left: 20%; width: 5.49866%;" data-key="27"></div>
+            <div class="button" style="top: 82.311%; left: 29.3834%; width: 5.99882%;" data-key="28"></div>
+            <div class="button" style="top: 77.8909%; left: 40.7507%; width: 6.99914%;" data-key="29"></div>
+            <div class="button" style="top: 89.383%; left: 54.6381%; width: 7.99914%;" data-key="30"></div>
+            <div class="button" style="top: 85.847%; left: 68.1493%; width: 8.9978%;" data-key="31"></div>
+            <div class="button" style="top: 92.3298%; left: 85.5228%; width: 4.49129%;" data-key="32"></div>
         </div>
         <script src="script.js"></script>
+        <!--<script src="drag-script.js"></script>-->
     </body>
 </html>

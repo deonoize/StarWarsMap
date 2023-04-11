@@ -1,12 +1,46 @@
+let buttons = {};
+
+if (localStorage.getItem('buttons') !== null) {
+    buttons = JSON.parse(localStorage.getItem('buttons'));
+}
+
 $(document).ready(function () {
+    Object.keys(buttons).forEach(key => {
+        setButton($('[data-key="' + key + '"]'), buttons[key]);
+    });
+
     $('.button').click(function () {
         let that = $(this);
-        if (that.hasClass('yellow')) {
-            that.removeClass('yellow');
-        } else if (that.hasClass('red')) {
-            that.removeClass('red').addClass('yellow');
-        } else {
-            that.addClass('red');
+        let key = that.data('key');
+
+        switch (buttons[key]) {
+            case undefined:
+                buttons[key] = 'red';
+                break;
+            case 'red':
+                buttons[key] = 'yellow';
+                break;
+            case 'yellow':
+                delete buttons[key];
+                break;
         }
+
+        setButton(that, buttons[key])
+
+        localStorage.setItem('buttons', JSON.stringify(buttons));
     });
+
+    function setButton(button, value) {
+        switch (value) {
+            case undefined:
+                button.removeClass('yellow');
+                break;
+            case 'red':
+                button.addClass('red');
+                break;
+            case 'yellow':
+                button.removeClass('red').addClass('yellow');
+                break;
+        }
+    }
 });
